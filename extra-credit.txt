@@ -1,0 +1,16 @@
+Add object instances. (3 pts) Instead of static methods (Java) or top-level functions (Python), 
+add the ability to call object-instance methods. This means that clients must somehow either 
+remotely "new" an object on the Server, and both the Server and the Client must have some way 
+of identifying a Server-hosted object to the Client that the Client can use to identify which 
+object on the Server to invoke. 
+HINT: This is probably not a fair assignment to give to college students--consider it more of a 
+thought exercise than a "you must submit code". Think about how would you do it, and submit a few 
+paragraphs of prose or pseudocode that explains your idea.
+
+To implement this, I would think that there needs to be a way for the Server to identify remote
+objects. I believe this is done through extending the Remote interface. The server needs to have
+a list of remote objects which is shared with the client. The list should have the references to 
+the remote objects so that the client can have references these remote objects. The client would
+do a RMI to get this registry and get the reference. With the reference, the client could then
+RMI on the object reference.
+
